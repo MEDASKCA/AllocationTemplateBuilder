@@ -190,7 +190,7 @@ export default function Home() {
     }
     return true;
   };
-  const rows = [];
+  const rows: ReactElement[] = [];
   let row = 1;
 
   const pushRow = (cells: ReactElement[]) => {
