@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useMemo, useState } from "react";
 
 export default function Home() {
@@ -152,7 +153,7 @@ export default function Home() {
     }
     return total;
   };
-  const appendRightExtraCells = (cells: JSX.Element[]) => {
+  const appendRightExtraCells = (cells: ReactElement[]) => {
     const section = currentRightSection();
     if (!section) {
       cells.push(<td key="c" className="unit-empty"></td>);
@@ -192,7 +193,7 @@ export default function Home() {
   const rows = [];
   let row = 1;
 
-  const pushRow = (cells: JSX.Element[]) => {
+  const pushRow = (cells: ReactElement[]) => {
     rows.push(
       <tr key={`r-${row}`}>
         {cells}
