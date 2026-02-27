@@ -31,15 +31,15 @@ export default function Home() {
   const unit2 = unitNamesArr[1] || "Unit 2";
   const satelliteLabel = satelliteUnits || "Satellite Day Unit";
 
-  const roomLabel = (unitLabel, roomNum) =>
+  const roomLabel = (_unitLabel: string, roomNum: number) =>
     `${subunitLabel || "Room"} ${roomNum}`;
 
-  const leftRoomLabel = (roomNum) => {
+  const leftRoomLabel = (roomNum: number) => {
     if (unitCount === 1) return roomLabel(unit1, roomNum);
     return roomLabel(unit1, roomNum);
   };
 
-  const rightRoomLabel = (roomNum) => {
+  const rightRoomLabel = (roomNum: number) => {
     if (unitCount === 1) return "";
     return roomLabel(unit2, roomNum);
   };
@@ -51,7 +51,7 @@ export default function Home() {
   }, [contactPreference, leadRoleLabel, contactValue, leadBoth]);
 
   const coordinatorPlaceholder = "(Title): (FIRST INITIAL) (SURNAME) (SHIFT PATTERN)";
-  const coordinatorText = (index) => {
+  const coordinatorText = (index: number) => {
     const custom = coordinatorLabels[index - 1];
     return custom?.trim() ? custom : `${leadLabelPreview} ${index}`;
   };
@@ -59,7 +59,7 @@ export default function Home() {
   const floaterCount = 1;
   const unallocatedCount = 1;
 
-  const getEContent = (row) => {
+  const getEContent = (row: number) => {
     const managementLabelRow = 5;
     const managementSlotsStart = managementLabelRow + 2;
     const floaterLabelRow = managementSlotsStart + managementCount;
@@ -82,14 +82,14 @@ export default function Home() {
     return "";
   };
 
-  const eCell = (row) => (
+  const eCell = (row: number) => (
     <>
       {cellRef("E", row)}
       {getEContent(row)}
     </>
   );
 
-  const getEType = (row) => {
+  const getEType = (row: number) => {
     const managementLabelRow = 5;
     const managementSlotsStart = managementLabelRow + 2;
     const floaterLabelRow = managementSlotsStart + managementCount;
@@ -112,9 +112,9 @@ export default function Home() {
   const unit1Coordinators = coordinatorsPerUnit[0] || 1;
   const unit2Coordinators = unitCount > 1 ? coordinatorsPerUnit[1] || 1 : 0;
   const maxRooms = unitCount > 1 ? Math.max(unit1Rooms, unit2Rooms) : unit1Rooms;
-  const cellRef = (col, row) =>
+  const cellRef = (col: string, row: number) =>
     showPlaceholders ? <span className="cell-ref">{`${col}${row}`}</span> : null;
-  const eCellProps = (row) => {
+  const eCellProps = (row: number) => {
     const eType = getEType(row);
     const noBorders =
       eType !== "label" ? " no-border-top no-border-bottom no-border-right" : "";
@@ -129,11 +129,11 @@ export default function Home() {
         : undefined;
     return { className, style };
   };
-  const slotText = (unit, roomNum, slotNumber) =>
+  const slotText = (unit: number, roomNum: number, slotNumber: number) =>
     showPlaceholders ? `${unit}.${roomNum}.${slotNumber}${slotNumber === 1 ? "*" : ""}` : "";
   const staffPlaceholder = "(Title): (FIRST INITIAL) (SURNAME)  (SHIFT PATTERN)";
   const slotTextStyle = { fontSize: "20px" };
-  const rightSections = [];
+  const rightSections: Array<{ label: string; rows: number; prefix: string }> = [];
   if (unitCount > 1 && hasNightUnit) {
     rightSections.push({ label: "Hosp Night Unit", rows: 15, prefix: "2.9." });
   }
@@ -152,7 +152,7 @@ export default function Home() {
     }
     return total;
   };
-  const appendRightExtraCells = (cells) => {
+  const appendRightExtraCells = (cells: JSX.Element[]) => {
     const section = currentRightSection();
     if (!section) {
       cells.push(<td key="c" className="unit-empty"></td>);
@@ -192,7 +192,7 @@ export default function Home() {
   const rows = [];
   let row = 1;
 
-  const pushRow = (cells) => {
+  const pushRow = (cells: JSX.Element[]) => {
     rows.push(
       <tr key={`r-${row}`}>
         {cells}
