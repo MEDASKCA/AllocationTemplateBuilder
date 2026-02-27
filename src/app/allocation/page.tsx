@@ -153,7 +153,7 @@ export default function Home() {
     }
     return total;
   };
-  const appendRightExtraCells = (cells: ReactElement[]) => {
+  const appendRightExtraCells = (cells: Array<ReactElement | null>) => {
     const section = currentRightSection();
     if (!section) {
       cells.push(<td key="c" className="unit-empty"></td>);
@@ -193,7 +193,7 @@ export default function Home() {
   const rows: ReactElement[] = [];
   let row = 1;
 
-  const pushRow = (cells: ReactElement[]) => {
+  const pushRow = (cells: Array<ReactElement | null>) => {
     rows.push(
       <tr key={`r-${row}`}>
         {cells}
