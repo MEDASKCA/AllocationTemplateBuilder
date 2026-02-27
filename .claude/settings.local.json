@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(xargs -I{} taskkill //PID {} //F)",
+      "Bash(cd:*)",
+      "Bash(grep:*)",
+      "Bash(cd /c/Users/forda/medaskca-tom/tom-ui2 && npx vitest run tests/tom-reasoning-assist-guard.test.ts 2>&1)",
+      "Bash(curl:*)",
+      "Bash(sleep 4:*)",
+      "Bash(sleep 3:*)",
+      "Bash(tail:*)",
+      "Bash(grep ×\\\\|failed\\\\|FAIL:*)",
+      "Bash(cat:*)",
+      "Bash(taskkill:*)",
+      "Bash(tasklist:*)",
+      "Bash(cmd:*)"
+    ]
+  }
+}
