@@ -9,7 +9,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Hosp Allocation Title",
+  title: "Department Site Allocation Template",
   description: "Allocation template",
 };
 

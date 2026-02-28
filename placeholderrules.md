@@ -58,3 +58,7 @@ Notes:
 ## Slot Role Logic
 - Slot .1 (e.g., 1.1.1*) is always the Room Lead/Charge and is marked with * in the placeholder scheme.
 - This is a logical rule only; no extra text is rendered in the UI.
+
+## Archived Placeholder Text
+- Removed from the live template, but retained for future reuse:
+  - "(Title): (FIRST INITIAL) (SURNAME) (SHIFT PATTERN)"
