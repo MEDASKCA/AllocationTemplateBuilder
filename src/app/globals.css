@@ -808,7 +808,7 @@ table.sheet.single-unit col.col-e { width: 30%; }
 }
 
 .section-cell {
-  background: var(--theme-unit-header-fill, rgba(216, 236, 255, 0.92));
+  background: rgb(225, 231, 240) !important;
   font-family: var(--theme-unit-header-font-family, Manrope, sans-serif);
   font-weight: var(--theme-unit-header-font-weight, 800);
   text-align: var(--theme-unit-header-text-align, center);

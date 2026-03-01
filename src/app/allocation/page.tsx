@@ -196,7 +196,7 @@ export default function Home() {
   const [activeThemeTargets, setActiveThemeTargets] = useState<ThemeGroupKey[]>(["leadHeader"]);
   const [tableTheme, setTableTheme] = useState<Record<ThemeGroupKey, ThemeGroupSettings>>({
     leadHeader:    { fontFamily: "Manrope, sans-serif", fontSize: 17, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0ea5e9", backgroundFill: "transparent", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
-    unitHeader:    { fontFamily: "Manrope, sans-serif", fontSize: 25, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0ea5e9", backgroundFill: "rgba(216, 236, 255, 0.92)", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
+    unitHeader:    { fontFamily: "Manrope, sans-serif", fontSize: 25, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0ea5e9", backgroundFill: "rgb(225, 231, 240)", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
     subunitLabel:  { fontFamily: "Manrope, sans-serif", fontSize: 22, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0a2b52", backgroundFill: "#dbeafe", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
     specification: { fontFamily: "Manrope, sans-serif", fontSize: 18, fontWeight: 700, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0a2b52", backgroundFill: "#ffffff", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
     staffSlot:     { fontFamily: "Manrope, sans-serif", fontSize: 20, fontWeight: 500, fontStyle: "normal", textDecoration: "none", textAlign: "left",   fontColor: "#6f87a1", backgroundFill: "#ffffff", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
@@ -372,7 +372,7 @@ export default function Home() {
   const handleNew = () => {
     setTableTheme({
       leadHeader:    { fontFamily: "Manrope, sans-serif", fontSize: 17, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0ea5e9", backgroundFill: "transparent", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
-      unitHeader:    { fontFamily: "Manrope, sans-serif", fontSize: 25, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0ea5e9", backgroundFill: "rgba(216, 236, 255, 0.92)", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
+      unitHeader:    { fontFamily: "Manrope, sans-serif", fontSize: 25, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0ea5e9", backgroundFill: "rgb(225, 231, 240)", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
       subunitLabel:  { fontFamily: "Manrope, sans-serif", fontSize: 22, fontWeight: 800, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0a2b52", backgroundFill: "#dbeafe", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
       specification: { fontFamily: "Manrope, sans-serif", fontSize: 18, fontWeight: 700, fontStyle: "normal", textDecoration: "none", textAlign: "center", fontColor: "#0a2b52", backgroundFill: "#ffffff", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
       staffSlot:     { fontFamily: "Manrope, sans-serif", fontSize: 20, fontWeight: 500, fontStyle: "normal", textDecoration: "none", textAlign: "left",   fontColor: "#6f87a1", backgroundFill: "#ffffff", lineColor: "#7fa6d1", borderTop: true, borderRight: true, borderBottom: true, borderLeft: true, borderWidth: 2 },
@@ -1133,9 +1133,9 @@ type SpecificationOptionGroup = {
     ].filter(Boolean));
 
     pushRow([
-      <td key="a" rowSpan={2} className="section-cell">{cellRef("A", pageRow)}{leftUnitName}</td>,
+      <td key="a" rowSpan={2} className="section-cell" style={{ backgroundColor: "rgb(225, 231, 240)" }}>{cellRef("A", pageRow)}{leftUnitName}</td>,
       <td key="b" rowSpan={2}>{cellRef("B", pageRow)}</td>,
-      pageUnitCount > 1 ? <td key="c" rowSpan={2} className="section-cell">{cellRef("C", pageRow)}{rightUnitName}</td> : null,
+      pageUnitCount > 1 ? <td key="c" rowSpan={2} className="section-cell" style={{ backgroundColor: "rgb(225, 231, 240)" }}>{cellRef("C", pageRow)}{rightUnitName}</td> : null,
       pageUnitCount > 1 ? <td key="d" rowSpan={2}>{cellRef("D", pageRow)}</td> : null,
       <td key="e" className={eCellProps(pageRow).className} style={eCellProps(pageRow).style}>{eCell(pageRow)}</td>,
     ].filter(Boolean));
